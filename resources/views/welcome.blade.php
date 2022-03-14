@@ -19,12 +19,16 @@
     }
 
   </style>
+
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 </head>
 
 <body>
 
-  <livewire:counter />
+  <livewire:contact-form />
 
+
+  <script src="{{ asset('js/app.js') }}"></script>
   @livewireScripts
 </body>
 
