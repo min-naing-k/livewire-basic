@@ -18,20 +18,18 @@
 
 <body>
 
-  <livewire:contact-form />
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl">{{ $post->title }}</h2>
+    <div class="mt-8">
+      {{ $post->content }}
+      <div class="h-96 mt-8">Scroll down for comments...</div>
+      <div class="h-96"></div>
+      <div class="h-96"></div>
+    </div>
 
-  <x-navbar />
+    <hr>
 
-  <livewire:data-table />
-
-  <div class="my-8">
-    <h2 class="text-lg font-semibold mt-4">Livewire Blog Posts w/ Comments</h2>
-
-    <ul class="list-disc mt-4">
-      @foreach ($posts as $post)
-        <li><a href="{{ route('post.show', $post) }}" class="text-blue-600">{{ $post->title }}</a></li>
-      @endforeach
-    </ul>
+    <livewire:comments-section :post="$post" />
   </div>
 
   <script src="{{ asset('js/app.js') }}"></script>
