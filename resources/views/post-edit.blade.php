@@ -14,19 +14,33 @@
   @livewireStyles
 
   <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+
+  <script src="//unpkg.com/alpinejs" defer></script>
+
+  <style>
+    progress {
+      border-radius: 7px;
+      height: 12px;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: lightgray;
+      border-radius: 7px;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: blue;
+      border-radius: 7px;
+    }
+
+  </style>
 </head>
 
 <body>
 
-  <livewire:contact-form />
-
-  <x-navbar />
-
-  <livewire:data-table />
-
-  <x-posts :posts="$posts" />
-
-  <livewire:polling-example />
+  <div class="max-w-7xl mx-auto my-4">
+    <livewire:post-edit :post="$post" />
+  </div>
 
   <script src="{{ asset('js/app.js') }}"></script>
   @livewireScripts

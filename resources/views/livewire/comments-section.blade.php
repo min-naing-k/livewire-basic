@@ -75,5 +75,6 @@
       <p class="text-sm text-gray-500">There is no comments yet...</p>
     </div>
   @endforelse
+  {{-- <livewire:comments-polling :post_id="$post->id" /> --}}
 
 </div>

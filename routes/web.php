@@ -13,11 +13,12 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
-    $posts = Post::all();
-    return view('welcome', compact('posts'));
+  $posts = Post::take(5)->get();
+  return view('welcome', compact('posts'));
 });
 
 Route::get('posts/{post}', [PostController::class, 'show'])->name('post.show');
+Route::get('posts/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
